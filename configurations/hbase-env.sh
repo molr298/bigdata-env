@@ -141,3 +141,8 @@ export HBASE_MANAGES_ZK=true
 # Override text processing tools for use by these launch scripts.
 # export GREP="${GREP-grep}"
 # export SED="${SED-sed}"
+export HDFS_NAMENODE_USER="root"
+export HDFS_DATANODE_USER="root"
+export HDFS_SECONDARYNAMENODE_USER="root"
+export YARN_RESOURCEMANAGER_USER="root"
+export YARN_NODEMANAGER_USER="root"
