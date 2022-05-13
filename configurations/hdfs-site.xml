@@ -23,10 +23,10 @@
             </property>
             <property>
                     <name>dfs.namenode.name.dir</name>
-                    <value>/home/waterting/hdfs/namenode</value>
+                    <value>/home/hadoop/hdfs/namenode</value>
             </property>
             <property>
                     <name>dfs.datanode.name.dir</name>
-                    <value>/home/waterting/hdfs/datanode</value>
+                    <value>/home/hadoop/hdfs/datanode</value>
             </property>
     </configuration>

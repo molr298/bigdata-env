@@ -23,9 +23,9 @@ ENV PATH $HADOOP_HOME/sbin:$PATH
 
 # HADOOP - CREATE DIRECTORY FOR STORING DOCUMENTS
 RUN mkdir /home/hadoop /home/hadoop/hdfs
-RUN mkdir /home/hadoop/tmp /home/hadoop/hdfs/namenode /home/hadoop/hdfs/datanode
+RUN mkdir /home/hadoop/tmpdata /home/hadoop/hdfs/namenode /home/hadoop/hdfs/datanode
 RUN chmod 777 /home/hadoop/hdfs/namenode
-RUN chmod 777 /home/hadoop/tmp
+RUN chmod 777 /home/hadoop/tmpdata
 RUN chmod 777 /home/hadoop/hdfs/datanode
 
 ADD configurations/start-dfs.sh $HADOOP_HOME/sbin
@@ -47,8 +47,6 @@ RUN mv spark-3.1.2-bin-hadoop3.2 /usr/local/spark
 ENV SPARK_HOME /usr/local/spark
 ENV PATH $SPARK_HOME/sbin:$PATH
 ENV PATH $SPARK_HOME/bin:$PATH
-
-ADD configurations/slaves $SPARK_HOME/conf/slaves
 
 
 # HBASE

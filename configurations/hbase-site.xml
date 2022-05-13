@@ -59,7 +59,7 @@
 
   <property>
     <name>hbase.zookeeper.property.dataDir</name>
-    <value>/home/waterting/HBASE/zookeeper</value>
+    <value>/usr/local/zookeeper</value>
   </property>
 
   <property>
