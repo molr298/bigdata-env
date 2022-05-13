@@ -50,9 +50,9 @@ ENV PATH $SPARK_HOME/bin:$PATH
 
 
 # HBASE
-RUN wget https://downloads.apache.org/hbase/2.4.11/hbase-2.4.11-bin.tar.gz
-RUN tar xvf hbase-2.4.11-bin.tar.gz
-RUN mv hbase-2.4.11 /usr/local/hbase
+RUN wget https://downloads.apache.org/hbase/2.4.12/hbase-2.4.12-bin.tar.gz
+RUN tar xvf hbase-2.4.12-bin.tar.gz
+RUN mv hbase-2.4.12 /usr/local/hbase
 RUN mkdir /usr/local/zookeeper
 RUN chmod 777 /usr/local/zookeeper
 ENV HBASE_HOME /usr/local/hbase
@@ -60,6 +60,11 @@ ENV PATH $HBASE_HOME/bin:$PATH
 
 ADD configurations/hbase-site.xml $HADOOP_HOME/conf/hbase-site.xml
 
+RUN export HDFS_NAMENODE_USER="root"
+RUN export HDFS_DATANODE_USER="root"
+RUN export HDFS_SECONDARYNAMENODE_USER="root"
+RUN export YARN_RESOURCEMANAGER_USER="root"
+RUN export YARN_NODEMANAGER_USER="root"
 
 # FORMAT NAMENODE
 ARG FORMAT_NAMENODE_COMMAND
